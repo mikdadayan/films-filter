@@ -1,0 +1,23 @@
+.about-film{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: flex;
+}
+
+.about-film img{
+    width: 300px;
+    height: 500px;
+    object-fit: cover;
+    border: 3px solid black;
+}
+.about-film-content{
+    padding-left: 30px;
+}
+.film-year{
+    font-size: 30px;
+}
+.film-title{
+    font-size: 50px;
+}

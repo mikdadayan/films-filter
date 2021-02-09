@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navigation from "./components/navigation/navigation";
+import Main from "./components/main/main";
+import NoMatch from "./pages/404/404";
+import AddFilm from "./pages/addFilm/addFilm";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
+import Registration from "./pages/register/register";
+import Login from "./pages/login/login";
+import AboutFilm from "./pages/about-film/about-film";
+import PrivateRoute from "./components/private-route/private-route";
+import { useCallback, useEffect } from "react";
+import { connect } from "react-redux";
+import { loadFilms } from "./redux/film/film.action";
+import { loadUsers } from "./redux/auth/auth.action";
 
-function App() {
+function App({loadUsers, loadFilms}) {
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+  let films = JSON.parse(localStorage.getItem("films")) || [];
+  // console.log(users)
+  // console.log(films)
+  useEffect(() => {
+    loadUsers(users);
+    loadFilms(films)
+  }, [users, films]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="page" id="page">
+        <Navigation />
+        <div className="App">
+          <Switch>
+            {/* private */}
+
+            <PrivateRoute path="/addFilm" component={AddFilm} />
+            {/* private */}
+            <PrivateRoute path="/registration" component={Registration} />
+            {/* private */}
+            <PrivateRoute path="/login" component={Login} />
+
+            <Route
+              exact
+              path="/about-film"
+              render={() => <AboutFilm />}
+            ></Route>
+            <Route exact path="/" render={() => <Main />}></Route>
+            <Route component={NoMatch} />
+          </Switch>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default connect(null, {loadUsers, loadFilms}) (App);
