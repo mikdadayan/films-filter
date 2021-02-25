@@ -49,7 +49,6 @@ export const registerUser = (username, password) => async (dispatch) => {
 };
 
 export const loginUser = (username, password) => async (dispatch) => {
-  console.log(username, password);
   try {
     if (username.trim().length > 0 && password.trim().length > 0) {
       const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -57,7 +56,6 @@ export const loginUser = (username, password) => async (dispatch) => {
       const result = users.find((user) => {
         return user.username === username && user.password === password;
       });
-      console.log("$$$$$$$$$$$$");
 
       console.log(result);
       if (result) {
