@@ -6,7 +6,6 @@ import { addFilmAction } from "../../redux/film/film.action";
 import "./addFilm.css";
 
 function AddFilm({ addFilmAction, history }) {
-    console.log(history)
   const [title, setTitle] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [year, setYear] = useState(1900);
