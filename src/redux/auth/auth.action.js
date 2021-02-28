@@ -52,12 +52,9 @@ export const loginUser = (username, password) => async (dispatch) => {
   try {
     if (username.trim().length > 0 && password.trim().length > 0) {
       const users = JSON.parse(localStorage.getItem("users")) || [];
-      console.log(users);
       const result = users.find((user) => {
         return user.username === username && user.password === password;
       });
-
-      console.log(result);
       if (result) {
         dispatch({
           type: LOGIN_SUCCESS,

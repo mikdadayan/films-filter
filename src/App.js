@@ -13,14 +13,12 @@ import { connect } from "react-redux";
 import { loadFilms } from "./redux/film/film.action";
 import { loadUsers } from "./redux/auth/auth.action";
 
-function App({loadUsers, loadFilms}) {
+function App({ loadUsers, loadFilms }) {
   let users = JSON.parse(localStorage.getItem("users")) || [];
   let films = JSON.parse(localStorage.getItem("films")) || [];
-  // console.log(users)
-  // console.log(films)
   useEffect(() => {
     loadUsers(users);
-    loadFilms(films)
+    loadFilms(films);
   }, [users, films]);
 
   return (
@@ -51,4 +49,4 @@ function App({loadUsers, loadFilms}) {
   );
 }
 
-export default connect(null, {loadUsers, loadFilms}) (App);
+export default connect(null, { loadUsers, loadFilms })(App);
