@@ -39,9 +39,6 @@ function Navigation({ auth: { isAuthenticated }, logoutUser }) {
           </NavLink>
         )}
       </div>
-      {/* <div className='filter'>
-                
-            </div> */}
     </div>
   );
 }

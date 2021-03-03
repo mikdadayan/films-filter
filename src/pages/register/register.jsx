@@ -16,7 +16,6 @@ function Registration({ registerUser }) {
     <div className="registration">
       <h1>Registration</h1>
       <form className="add-film-form" onSubmit={handleregistration}>
-        {/* <input type='file' required/> */}
         <input
           type="text"
           placeholder="username"

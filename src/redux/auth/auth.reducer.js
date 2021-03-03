@@ -1,5 +1,4 @@
 import AuthActionTypes from "./auth.types";
-import Cookies from "universal-cookie";
 
 
 const {

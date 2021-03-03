@@ -9,14 +9,6 @@ function Login({ loginUser }) {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // if (
-    //   localStorage.getItem("username") === username &&
-    //   localStorage.getItem("password") === password
-    // ) {
-    //   alert("URAAAAAAAAAA");
-    // } else {
-    //   alert("noOk");
-    // }
     loginUser(username, password);
   };
 

@@ -28,7 +28,6 @@ function App({ loadUsers, loadFilms }) {
         <div className="App">
           <Switch>
             {/* private */}
-
             <PrivateRoute path="/addFilm" component={AddFilm} />
             {/* private */}
             <PrivateRoute path="/registration" component={Registration} />

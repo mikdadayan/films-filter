@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
 import { addFilmAction } from "../../redux/film/film.action";
 
 import "./addFilm.css";

@@ -1,6 +1,5 @@
 import React from 'react';
 import './film-Item.css';
-// import imgT  from './../../assets/images/1.png'
 import { Link } from 'react-router-dom';
 
 function FilmItem({imageUrl, title, year, description, published}){
