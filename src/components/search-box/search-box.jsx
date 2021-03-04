@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import search from "./../../assets/images/search.png";
 import { searchFilms } from "../../redux/film/film.action";
 
-const SearchBox = ({films, filteredFilms, isFiltered, searchFilms}) => {
+const SearchBox = ({films, searchFilms}) => {
   const [searchValue, setSearchValue] = useState("");
   useEffect(() => {
     searchFilms(searchValue, films);

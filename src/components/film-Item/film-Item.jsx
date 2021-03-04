@@ -2,7 +2,7 @@ import React from 'react';
 import './film-Item.css';
 import { Link } from 'react-router-dom';
 
-function FilmItem({imageUrl, title, year, description, published}){
+function FilmItem({imageUrl, title, year}){
     return(
         <Link to='/about-film'>
             <div className='filmItem'>
