@@ -16,7 +16,6 @@ const INITIAL_STATE = {
 
 const filmReducer = (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
-  console.log(payload);
   switch (type) {
     case LOAD_FILMS:
     case ADD_FILM_SUCCESS:
