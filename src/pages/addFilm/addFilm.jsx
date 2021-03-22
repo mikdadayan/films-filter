@@ -14,10 +14,10 @@ function AddFilm({ addFilmAction, history }) {
     addFilmAction(imageUrl, title, year, description);
     setImageUrl("");
     setTitle("");
-    setYear(1900);
+    setYear(1890);
     setDescription("");
-    history.push('/');
-    alert("ok");
+    history.push("/");
+    alert("Film added.");
   };
 
   return (
